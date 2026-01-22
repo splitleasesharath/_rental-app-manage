@@ -1,0 +1,99 @@
+/* Rental Application Management Page Styles */
+
+.rental-app-manage-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-gray-50);
+}
+
+/* Page Header */
+.page-header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: var(--spacing-6) var(--spacing-8);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin: 0 0 var(--spacing-2) 0;
+}
+
+.page-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+/* Main Content */
+.page-main {
+  flex: 1;
+  padding: var(--spacing-6) var(--spacing-8);
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Error Banner */
+.error-banner {
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.error-banner p {
+  color: var(--color-error);
+  margin: 0;
+  font-size: var(--font-size-sm);
+}
+
+/* Page Footer */
+.page-footer {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-gray-200);
+  padding: var(--spacing-4) var(--spacing-8);
+  text-align: center;
+}
+
+.page-footer p {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .page-header {
+    padding: var(--spacing-4) var(--spacing-4);
+  }
+
+  .page-main {
+    padding: var(--spacing-4);
+  }
+
+  .page-footer {
+    padding: var(--spacing-3) var(--spacing-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-header {
+    position: relative;
+  }
+
+  .page-title {
+    font-size: var(--font-size-xl);
+  }
+}

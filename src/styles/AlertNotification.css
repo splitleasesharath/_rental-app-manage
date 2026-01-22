@@ -1,0 +1,168 @@
+/* Alert Notification Styles */
+
+.alert-container {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  max-width: 400px;
+  pointer-events: none;
+}
+
+.alert-container-top-right {
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+}
+
+.alert-container-top-left {
+  top: var(--spacing-4);
+  left: var(--spacing-4);
+}
+
+.alert-container-top-center {
+  top: var(--spacing-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.alert-container-bottom-right {
+  bottom: var(--spacing-4);
+  right: var(--spacing-4);
+}
+
+.alert-container-bottom-left {
+  bottom: var(--spacing-4);
+  left: var(--spacing-4);
+}
+
+.alert-container-bottom-center {
+  bottom: var(--spacing-4);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.alert-notification {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-4);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  pointer-events: auto;
+  animation: slideIn 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Purple Alert - Primary Split Lease Style (matches AirAlert config) */
+.alert-purple {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.alert-purple .alert-progress-bar {
+  background-color: var(--color-secondary);
+}
+
+/* Other Alert Types */
+.alert-success {
+  background-color: var(--color-success);
+  color: var(--color-white);
+}
+
+.alert-error {
+  background-color: var(--color-error);
+  color: var(--color-white);
+}
+
+.alert-warning {
+  background-color: var(--color-warning);
+  color: var(--color-gray-900);
+}
+
+.alert-info {
+  background-color: var(--color-info);
+  color: var(--color-white);
+}
+
+.alert-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.alert-title {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-1);
+}
+
+.alert-message {
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+.alert-close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.alert-close-btn:hover {
+  opacity: 1;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.alert-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation: progressShrink 5s linear forwards;
+}
+
+@keyframes progressShrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .alert-container {
+    left: var(--spacing-2);
+    right: var(--spacing-2);
+    max-width: none;
+    transform: none;
+  }
+
+  .alert-container-top-center,
+  .alert-container-bottom-center {
+    transform: none;
+  }
+}

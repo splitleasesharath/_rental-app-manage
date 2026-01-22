@@ -1,0 +1,1 @@
+export { RentalAppManagePage } from './RentalAppManagePage';
